@@ -56,5 +56,8 @@
 ---
 ## git ignore
 * .gitignore 참고 사이트 -> atlassian.com/git/tutorials/saving-changes/gitignore 
+---
+## 좋은 Commit 메시지를 작성하는 방법
+* https://meetup.toast.com/posts/106
 
 
