@@ -1,1 +1,5 @@
 .vscode/*
+*.out
+Algorithm/DFS.out
+.vscode/tasks.json
+.vscode/launch.json
