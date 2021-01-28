@@ -5,24 +5,26 @@
 using namespace std;
 
 void BFS(int start, vector<vector<int>> jungjum, bool check_vertical[]) {
-    check_vertical[start] = true;
     queue<int> q;
-    int start_temp = start;
 
-    for (int i = start; i < jungjum.size(); i++)
-    {
-        for (int j = 0; j < jungjum[start_temp].size(); j++)
-        {
-            int D1 = jungjum[start_temp][j];
-            if(check_vertical[D1] == false) {
-                q.push(D1);
-            }
-        }
-        printf("%d ",start_temp);
-        check_vertical[start_temp];
-        start_temp=q.front();
-        q.pop();
-    }
+    check_vertical[start] = true;
+    int start_temp;
+    q.push(start);
+
+   do  {
+       start_temp = q.front(); q.pop();
+       
+       for (int i = 0; i < jungjum[start_temp].size(); i++)
+       {
+           int D1 = jungjum[start_temp][i];
+           if(check_vertical[D1] == false){
+               q.push(D1);
+               check_vertical[D1] = true;
+           }
+       }
+       printf("%d ",start_temp);
+   }
+   while (!q.empty());
 }
 
 void DFS(int start, vector<vector<int>> jungjum, bool check_vertical[]) {
